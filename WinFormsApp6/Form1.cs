@@ -44,9 +44,14 @@ namespace WinFormsApp6
             comboBox1.SelectedIndex = 0;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             pictureBox1.LoadCompleted += PictureBox1_LoadCompleted;
+            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
             LoadPhotos(textBox1.Text);
         }
 
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetItems();
+        }
 
         private void LoadPhotos(string search)
         {
